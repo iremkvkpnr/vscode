@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+    int n;
+    cout << "Enter the how much product in the market:" ;
+    cin >> n;
+    string* name = new string[n];
+    string* brand = new string[n];
+    string* expiration = new string[n];
+    string* price = new string[n];
+    for (int i = 0; i < n; i++)
+    {
+        cout << i + 1 << ". PRODUCT: " << endl;
+        cout << "Enter the name: ";
+        cin >> name[i];
+        cout << "Enter the brand: ";
+        cin >> brand[i];
+        cout << "Enter the expiration date:  ";
+        cin >> expiration[i];
+        cout << "Enter the price: ";
+        cin >> price[i];
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << i + 1 << ". Product name:" << name[i] << " Brand: " << brand[i] << " Expiration date: " << expiration[i] << " Price: " << price[i] << endl;
+    }
+    delete[] name;
+    delete[] brand;
+    delete[] expiration;
+    delete[] price;
+}
