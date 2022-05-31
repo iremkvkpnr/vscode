@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+using namespace std;
+struct ogrenci {
+	char isim[20];
+	char soyisim[20];
+	int no;
+};
+
+int main() {
+	ogrenci ogrenci1;
+	ogrenci* tut;
+	strcpy_s(ogrenci1.isim, "Mustafa");
+	strcpy_s(ogrenci1.soyisim, "coskun");
+	ogrenci1.no = 156;
+	tut = &ogrenci1;
+	cout << ogrenci1.isim << " " << ogrenci1.soyisim << " " << ogrenci1.no<<endl;
+	cout << (*tut).isim << " " << (*tut).soyisim << " " << (*tut).no<<endl;
+	//ya da
+	cout << tut->isim << " " << tut->soyisim << " " << tut->no;
+
+
+	return 0;
+}
