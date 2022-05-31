@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+using namespace std;
+struct Adress {
+	char mahalle[20];
+	char cadde[20];
+	char sokak[15];
+};
+struct ogrenci {
+	char isim[20];
+	char soyisim[20];
+	int numara;
+	struct Adress adres;
+};
+int main() {
+	ogrenci ogrenci1;
+	strcpy_s(ogrenci1.isim, "Mustafa murat");
+	strcpy_s(ogrenci1.soyisim, "yagci");
+	ogrenci1.numara = 11;
+	strcpy_s(ogrenci1.adres.mahalle, "bahcelievler");
+	strcpy_s(ogrenci1.adres.cadde, "tombakzade");
+	strcpy_s(ogrenci1.adres.sokak, "ermis");
+	cout << ogrenci1.isim << " " << ogrenci1.soyisim << " " << ogrenci1.numara << " " << ogrenci1.adres.mahalle
+		<< " " << ogrenci1.adres.cadde << " " << ogrenci1.adres.sokak;
+	return 0;
+}
