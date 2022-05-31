@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+using namespace std;
+struct ogrenci {
+	char isim[10];
+	char soyisim[10];
+	int no;
+};
+void deger_al(ogrenci *p) {
+	strcpy_s((*p).isim,"mehmet");
+	strcpy_s((*p).soyisim, "boz");
+	(*p).no = 12;
+
+}
+void goster(ogrenci* p) {
+	cout << "ogrencinin bilgileri: " << (*p).isim << " " << (*p).soyisim << " " << (*p).no<<endl;
+}
+int main() {
+	ogrenci ogrenci1 = { "Ahmet","Yilmaz",15 };
+	goster(&ogrenci1);
+
+	//referansla degistirdikten sonra
+	deger_al(&ogrenci1);
+	cout << (ogrenci1.isim) << " " << ogrenci1.soyisim << " " << ogrenci1.no;
+
+
+	return 0;
+}
