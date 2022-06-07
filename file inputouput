@@ -1,0 +1,45 @@
+  ////////////////////////////////////////////////////////DOSYA YAZMA
+  ofstream dosya;
+    dosya.open("database.txt", ios::app);
+    dosya << yeni.ID << " " << yeni.isim << " " << yeni.soyisim << " " << yeni.yas << " " << yeni.sehir << " "
+        << "01.06.2020" << " " << "0" << " " << "NULL\n";
+    cout << "Kaydiniz tamamlanmistir." << endl;
+    dosya.close();
+     ////////////////////////////////////////////////////// DOSYA OKUMA
+    ifstream dosya;
+    dosya.open("database.txt");
+       while (dosya >> kontrol) {
+        if (kontrol == ID) {
+            yeni.ID = kontrol;
+            i++;
+        }
+        else if (i == 1) {
+            yeni.isim = kontrol;
+            i++;
+        }
+        else if (i == 2) {
+            yeni.soyisim = kontrol;
+            i++;
+        }
+        else if (i == 3) {
+            yeni.yas = stoi(kontrol);
+            i++;
+        }
+        else if (i == 4) {
+            yeni.sehir = kontrol;
+            i++;
+        }
+        else if (i == 5) {
+            yeni.asi_tarihi = kontrol;
+            i++;
+        }
+        else if (i == 6) {
+            yeni.doz_no = stoi(kontrol);
+            i++;
+        }
+        else if (i == 7) {
+            yeni.asi_turu = kontrol;
+            i++;
+        }
+    }
+    dosya.close();
