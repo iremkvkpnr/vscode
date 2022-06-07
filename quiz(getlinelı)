@@ -1,0 +1,34 @@
+#include <iostream>
+#include <fstream>
+#include <stdlib.h>
+#include <string>
+using namespace std;
+int  main()
+{
+    string kelime;
+    int a = 1;
+    int n;
+    cout << "Kac adet ogretmen oldugunu giriniz:";
+    cin >> n;
+    string* name = new string[n];
+    string* surname = new string[n];
+    string* course = new string[n];
+    ofstream yazma;
+    yazma.open("database.txt");
+    for (int i = 0; i < n; i++)
+    {
+        cout << "Ogretmenin adini giriniz:";
+        cin >> name[i];
+        cout << "Ogretmenin soyadini giriniz:";
+        cin >> surname[i];
+        cout << "Ogretmenin dersini giriniz:";
+        cin >> course[i];
+        yazma << name[i] << " " << surname[i] << " " << course[i] << endl;
+    }
+    ifstream okuma;
+    okuma.open("database.txt");
+    while (getline(okuma,kelime)) {
+        cout << kelime<<endl;
+        a++;
+    }
+}
